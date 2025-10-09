@@ -1,0 +1,61 @@
+﻿@model MovieDetails
+
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <div class="d-flex justify-content-center mb-5" style="margin-top:10px"><h1>Add Movies Details</h1></div>
+        <hr />
+        <form class="row g-3 container d-flex justify-content-center" method="post" asp-controller="Home" asp-action="AddMovie">
+            <div class="col-md-6">
+                <label  class="form-label">Movie Name</label>
+                <input type="text" required class="form-control" asp-for="MovieName"">
+            </div>
+            <div class="col-md-6">
+                <label  class="form-label">Movie Description</label>
+                <input type="text" required class="form-control" asp-for="MovieDescription">
+            </div>
+            <div class="col-md-6">
+                <label for="inputState" class="form-label">Category</label>
+                <select id="inputState" required class="form-select" asp-for="MovieCategory">
+                    <option selected>Choose Category</option>
+                    <option asp-for="MovieCategory">Adventure</option>
+                    <option asp-for="MovieCategory">Action</option>
+                    <option asp-for="MovieCategory">Thriller</option>
+                    <option asp-for="MovieCategory">Horrror</option>
+                    <option asp-for="MovieCategory">Comedy</option>
+                    <option asp-for="MovieCategory">Musical</option>
+                    <option asp-for="MovieCategory">Romance</option>
+                    <option asp-for="MovieCategory">Drama</option>
+                    <option asp-for="MovieCategory">Fantasy</option>
+
+                </select>
+            </div>
+            
+            <div class="col-md-4">
+                <label  class="form-label">Rating /10</label>
+                <input type="tel" required class="form-control" asp-for="Rating">
+                <span class="text-danger" asp-validation-for="Rating">
+
+                </span>
+            </div>
+
+           
+           
+            <!--
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        Check me out
+                    </label>
+                </div>
+            </div>-->
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Upload</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-3 mb-5" style="margin-" >
+        <hr />
+    </div>
+</div>

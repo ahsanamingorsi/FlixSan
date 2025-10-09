@@ -1,0 +1,431 @@
+﻿@model IEnumerable<MovieDetails>
+
+    <div class="col-12 d-flex justify-content-center">
+        <h1>Admin Panel</h1>
+    </div>
+    <div class="col-12 d-flex justify-content-center">
+    <a class="btn btn-outline-success" asp-controller="Home" asp-action="AddMovie">Add Movie</a>
+</div>
+    <hr>
+<div class="col-12 d-flex justify-content-center">
+    <h3>Adventure</h3>
+</div>
+<table class="table table-hover container">
+    <tr class="bg-black text-white">
+        <td>Id</td>
+        <td>Movie Name</td>
+        <td>Movie Description</td>
+        <td>Category</td>
+        <td >Rating</td>
+        <td colspan="2">Action</td>
+    </tr>
+    
+    @foreach(var item in Model)
+    {
+        @if (item.MovieCategory == "Adventure")
+        {
+        <tr>
+
+            <td>@item.Id</td>
+            <td>@item.MovieName</td>
+            <td>@item.MovieDescription</td>
+            <td>@item.MovieCategory</td>
+            <td>@item.Rating</td>
+            <td>
+            <a class="btn btn-outline-primary" asp-controller="Home" asp-action="EditMovie" asp-route-Id="@item.Id">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+                </svg>
+                </a>
+            
+            </td>
+            <td>
+            <a class="btn btn-outline-danger" asp-controller="Home" asp-action="DeleteMovie" asp-route-Id="@item.Id">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0" />
+                </svg>
+            </a>
+            </td>
+        </tr>
+        }
+    }
+    
+</table>
+
+<hr>
+<div class="col-12 d-flex justify-content-center">
+    <h3>Actions</h3>
+</div>
+<table class="table table-hover container">
+    <tr class="bg-black text-white">
+        <td>Id</td>
+        <td>Movie Name</td>
+        <td>Movie Description</td>
+        <td>Category</td>
+        <td>Rating</td>
+        <td colspan="2">Action</td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        @if (item.MovieCategory == "Action")
+        {
+            <tr>
+
+                <td>@item.Id</td>
+                <td>@item.MovieName</td>
+                <td>@item.MovieDescription</td>
+                <td>@item.MovieCategory</td>
+                <td>@item.Rating</td>
+                <td>
+                    <a class="btn btn-outline-primary" asp-controller="Home" asp-action="EditMovie" asp-route-Id="@item.Id">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+                        </svg>
+                    </a>
+
+                </td>
+                <td>
+                    <a class="btn btn-outline-danger" asp-controller="Home" asp-action="DeleteMovie" asp-route-Id="@item.Id">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                            <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0" />
+                        </svg>
+                    </a>
+                </td>
+            </tr>
+        }
+    }
+
+</table>
+
+<hr>
+<div class="col-12 d-flex justify-content-center">
+    <h3>Thriller</h3>
+</div>
+<table class="table table-hover container">
+    <tr class="bg-black text-white">
+        <td>Id</td>
+        <td>Movie Name</td>
+        <td>Movie Description</td>
+        <td>Category</td>
+        <td>Rating</td>
+        <td colspan="2">Action</td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        @if (item.MovieCategory == "Thriller")
+        {
+            <tr>
+
+                <td>@item.Id</td>
+                <td>@item.MovieName</td>
+                <td>@item.MovieDescription</td>
+                <td>@item.MovieCategory</td>
+                <td>@item.Rating</td>
+                <td>
+                    <a class="btn btn-outline-primary" asp-controller="Home" asp-action="EditMovie" asp-route-Id="@item.Id">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+                        </svg>
+                    </a>
+
+                </td>
+                <td>
+                    <a class="btn btn-outline-danger" asp-controller="Home" asp-action="DeleteMovie" asp-route-Id="@item.Id">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                            <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0" />
+                        </svg>
+                    </a>
+                </td>
+            </tr>
+        }
+    }
+
+</table>
+
+<hr>
+<div class="col-12 d-flex justify-content-center">
+    <h3>Horrror</h3>
+</div>
+<table class="table table-hover container">
+    <tr class="bg-black text-white">
+        <td>Id</td>
+        <td>Movie Name</td>
+        <td>Movie Description</td>
+        <td>Category</td>
+        <td>Rating</td>
+        <td colspan="2">Action</td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        @if (item.MovieCategory == "Horrror")
+        {
+            <tr>
+
+                <td>@item.Id</td>
+                <td>@item.MovieName</td>
+                <td>@item.MovieDescription</td>
+                <td>@item.MovieCategory</td>
+                <td>@item.Rating</td>
+                <td>
+                    <a class="btn btn-outline-primary" asp-controller="Home" asp-action="EditMovie" asp-route-Id="@item.Id">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+                        </svg>
+                    </a>
+
+                </td>
+                <td>
+                    <a class="btn btn-outline-danger" asp-controller="Home" asp-action="DeleteMovie" asp-route-Id="@item.Id">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                            <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0" />
+                        </svg>
+                    </a>
+                </td>
+            </tr>
+        }
+    }
+
+</table>
+
+
+<hr>
+<div class="col-12 d-flex justify-content-center">
+    <h3>Comedy</h3>
+</div>
+<table class="table table-hover container">
+    <tr class="bg-black text-white">
+        <td>Id</td>
+        <td>Movie Name</td>
+        <td>Movie Description</td>
+        <td>Category</td>
+        <td>Rating</td>
+        <td colspan="2">Action</td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        @if (item.MovieCategory == "Comedy")
+        {
+            <tr>
+
+                <td>@item.Id</td>
+                <td>@item.MovieName</td>
+                <td>@item.MovieDescription</td>
+                <td>@item.MovieCategory</td>
+                <td>@item.Rating</td>
+                <td>
+                    <a class="btn btn-outline-primary" asp-controller="Home" asp-action="EditMovie" asp-route-Id="@item.Id">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+                        </svg>
+                    </a>
+
+                </td>
+                <td>
+                    <a class="btn btn-outline-danger" asp-controller="Home" asp-action="DeleteMovie" asp-route-Id="@item.Id">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                            <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0" />
+                        </svg>
+                    </a>
+                </td>
+            </tr>
+        }
+    }
+
+</table>
+
+<hr>
+<div class="col-12 d-flex justify-content-center">
+    <h3>Musical</h3>
+</div>
+<table class="table table-hover container">
+    <tr class="bg-black text-white">
+        <td>Id</td>
+        <td>Movie Name</td>
+        <td>Movie Description</td>
+        <td>Category</td>
+        <td>Rating</td>
+        <td colspan="2">Action</td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        @if (item.MovieCategory == "Musical")
+        {
+            <tr>
+
+                <td>@item.Id</td>
+                <td>@item.MovieName</td>
+                <td>@item.MovieDescription</td>
+                <td>@item.MovieCategory</td>
+                <td>@item.Rating</td>
+                <td>
+                    <a class="btn btn-outline-primary" asp-controller="Home" asp-action="EditMovie" asp-route-Id="@item.Id">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+                        </svg>
+                    </a>
+
+                </td>
+                <td>
+                    <a class="btn btn-outline-danger" asp-controller="Home" asp-action="DeleteMovie" asp-route-Id="@item.Id">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                            <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0" />
+                        </svg>
+                    </a>
+                </td>
+            </tr>
+        }
+    }
+
+</table>
+
+<hr>
+<div class="col-12 d-flex justify-content-center">
+    <h3>Romance</h3>
+</div>
+<table class="table table-hover container">
+    <tr class="bg-black text-white">
+        <td>Id</td>
+        <td>Movie Name</td>
+        <td>Movie Description</td>
+        <td>Category</td>
+        <td>Rating</td>
+        <td colspan="2">Action</td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        @if (item.MovieCategory == "Romance")
+        {
+            <tr>
+
+                <td>@item.Id</td>
+                <td>@item.MovieName</td>
+                <td>@item.MovieDescription</td>
+                <td>@item.MovieCategory</td>
+                <td>@item.Rating</td>
+                <td>
+                    <a class="btn btn-outline-primary" asp-controller="Home" asp-action="EditMovie" asp-route-Id="@item.Id">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+                        </svg>
+                    </a>
+
+                </td>
+                <td>
+                    <a class="btn btn-outline-danger" asp-controller="Home" asp-action="DeleteMovie" asp-route-Id="@item.Id">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                            <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0" />
+                        </svg>
+                    </a>
+                </td>
+            </tr>
+        }
+    }
+
+</table>
+
+                        <hr>
+<div class="col-12 d-flex justify-content-center">
+    <h3>Drama</h3>
+</div>
+<table class="table table-hover container">
+    <tr class="bg-black text-white">
+        <td>Id</td>
+        <td>Movie Name</td>
+        <td>Movie Description</td>
+        <td>Category</td>
+        <td>Rating</td>
+        <td colspan="2">Action</td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        @if (item.MovieCategory == "Drama")
+        {
+            <tr>
+
+                <td>@item.Id</td>
+                <td>@item.MovieName</td>
+                <td>@item.MovieDescription</td>
+                <td>@item.MovieCategory</td>
+                <td>@item.Rating</td>
+                <td>
+                    <a class="btn btn-outline-primary" asp-controller="Home" asp-action="EditMovie" asp-route-Id="@item.Id">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+                        </svg>
+                    </a>
+
+                </td>
+                <td>
+                    <a class="btn btn-outline-danger" asp-controller="Home" asp-action="DeleteMovie" asp-route-Id="@item.Id">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                            <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0" />
+                        </svg>
+                    </a>
+                </td>
+            </tr>
+        }
+    }
+
+</table>
+
+<hr>
+<div class="col-12 d-flex justify-content-center">
+    <h3>Fantasy</h3>
+</div>
+<table class="table table-hover container">
+    <tr class="bg-black text-white">
+        <td>Id</td>
+        <td>Movie Name</td>
+        <td>Movie Description</td>
+        <td>Category</td>
+        <td>Rating</td>
+        <td colspan="2">Action</td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        @if (item.MovieCategory == "Fantasy")
+        {
+            <tr>
+
+                <td>@item.Id</td>
+                <td>@item.MovieName</td>
+                <td>@item.MovieDescription</td>
+                <td>@item.MovieCategory</td>
+                <td>@item.Rating</td>
+                <td>
+                    <a class="btn btn-outline-primary" asp-controller="Home" asp-action="EditMovie" asp-route-Id="@item.Id">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+                        </svg>
+                    </a>
+
+                </td>
+                <td>
+                    <a class="btn btn-outline-danger" asp-controller="Home" asp-action="DeleteMovie" asp-route-Id="@item.Id">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                            <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0" />
+                        </svg>
+                    </a>
+                </td>
+            </tr>
+        }
+    }
+
+</table>
