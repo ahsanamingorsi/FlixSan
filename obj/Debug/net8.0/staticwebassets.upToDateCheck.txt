@@ -1,5 +1,7 @@
-wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\images\ae440a5e-69e5-4c9a-867a-a4d396f9c59c-removebg-preview.png
+wwwroot\images\ae440a5e-69e5-4c9a-867a-a4d396f9c59c.png
+wwwroot\images\WhatsApp Image 2025-08-03 at 09.29.52_9a443d3a.jpg
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
@@ -58,6 +60,4 @@ wwwroot\lib\jquery\dist\jquery.js
 wwwroot\lib\jquery\dist\jquery.min.js
 wwwroot\lib\jquery\dist\jquery.min.map
 wwwroot\lib\jquery\LICENSE.txt
-wwwroot\images\ae440a5e-69e5-4c9a-867a-a4d396f9c59c.png
-wwwroot\images\ae440a5e-69e5-4c9a-867a-a4d396f9c59c-removebg-preview.png
-wwwroot\images\WhatsApp Image 2025-08-03 at 09.29.52_9a443d3a.jpg
+wwwroot\css\site.css

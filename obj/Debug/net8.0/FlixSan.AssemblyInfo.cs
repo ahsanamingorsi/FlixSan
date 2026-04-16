@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FlixSan")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b5c041d56a612706d70180c0efaf7944b566bf95")]
 [assembly: System.Reflection.AssemblyProductAttribute("FlixSan")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FlixSan")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
